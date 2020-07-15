@@ -13,10 +13,10 @@
         }
 
         .container{
-            position: absolute;
+            position: relative;
             background-image: linear-gradient(90deg,rgb(148, 65, 204),rgb(68, 68, 235) );
             width: 100vw;
-            height: 100vh;
+            height: 95vh;
             overflow:hidden;
         }
 
@@ -28,17 +28,17 @@
             display: flex;
             align-content: center;
             justify-content: center;
-            width: 350px;
+            width: 320px;
+            height:auto;
             max-width: 400px;
             transform: translateX(-50%);
-            top:-300px;
+            top:-200px;
             margin-top:-3rem;
             transition: top 0.5s ease-in;
         }
 
         #hat-img{
             width: 100%;
-            max-width: 120%; 
         }
 
 
@@ -51,6 +51,7 @@
             justify-content: center;
             justify-items: top;
             width: 320px;
+            height:auto;
             transform: translateX(-50%);
             animation: adb-anim-load 0.5s ease-in;
             animation-delay: 0.3s;
@@ -65,7 +66,7 @@
 
         @keyframes adb-anim-load{
             0% {top:40rem; visibility: visible;}
-            100% {top:28% ;visibility: visible;}
+            100% {top:30% ;visibility: visible;}
         }
 
         #cigar{
@@ -94,6 +95,8 @@
             display: flex;
             width:100%;
             justify-content: center;
+            position: absolute;
+            margin-bottom:3rem;
         }
 
         .btn{
@@ -143,6 +146,7 @@
             text-shadow:0rem 0rem 1rem rgba(240, 0, 0, 0.8);
             width:100%;
             font-family: 'Courier New', Courier, monospace;
+
         }
 
         .wrong{
@@ -229,7 +233,7 @@
                 wrongAns.style.visibility="hidden";
                 correctAns.style.visibility="hidden";
                 if (clickedButton.contains('white')){
-                    document.querySelector(".hat-container").style.top="28%";
+                    document.querySelector(".hat-container").style.top="30%";
                     document.querySelector("#chain").style.visibility="visible";
                     document.querySelector("#cigar").style.visibility="visible";
                     document.querySelector(".correct").style.visibility="visible";
@@ -239,7 +243,6 @@
                     btns.forEach(function(btn){
                         btn.style.display="none";
                     })
-
 
                 }else{
                     wrongAns.style.vissiblity="visible";
