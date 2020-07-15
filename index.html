@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congratzzz...Adb</title>
+    <style>
+
+
+        body{
+            margin: 0;
+
+        }
+
+        .container{
+            position: fixed;
+            background-image: linear-gradient(90deg,rgb(148, 65, 204),rgb(68, 68, 235) );
+            width: 100vw;
+            height: 100vh;
+            overflow:hidden;
+        }
+
+        .hat-container{
+            position: absolute;
+            left:50%;
+            margin-left: -1rem;
+            z-index:5;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            width: 350px;
+            max-width: 400px;
+            transform: translateX(-50%);
+            top:-200px;
+            margin-top:-3rem;
+            transition: top 0.5s ease-in;
+        }
+
+        #hat-img{
+            width: 100%;
+            max-width: 120%; 
+        }
+
+
+        .img-container{
+            position: absolute;
+            left:50%;
+            z-index:4;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            justify-items: top;
+            width: 350px;
+            transform: translateX(-50%);
+            animation: adb-anim-load 0.5s ease-in;
+            animation-delay: 0.3s;
+            animation-fill-mode: forwards;
+            visibility: hidden;
+        }
+
+        #adb-img{
+            top: 0;
+            width: 100%;
+        }
+
+        @keyframes adb-anim-load{
+            0% {top:40rem; visibility: visible;}
+            100% {top:30% ;visibility: visible;}
+        }
+
+        #cigar{
+            position: absolute;
+            bottom:35px;
+            left:60px;
+            height: 100px;  
+            visibility: hidden;
+            transition: all 0.4s;
+            
+        }
+
+        #chain{
+            visibility: hidden;
+            position: absolute;
+            position: absolute;
+            bottom:-90px;
+            left:86px;
+            height: 170px;  
+            transition: all 0.4s;
+        }
+
+        .buttons{
+            position: absolute;
+            bottom:5px;
+            display: flex;
+            width:100%;
+            justify-content: center;
+        }
+
+        .btn{
+            margin:10px;
+            width:5rem;
+            height:2rem;
+            border-radius: 1rem;
+            outline: none;
+            border: 0;
+            font-weight: 500;
+
+        }
+
+        .caption{
+            position:absolute;
+            bottom: 0.3rem;
+            margin:0rem;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color:White;
+            line-height: 3rem;
+            text-shadow: rgba(90, 90, 90, 0.8);
+            font-size: 3rem;
+            width:100%;
+            text-align: center;
+            visibility: hidden;
+            z-index:100;
+            text-shadow:0rem 0rem 0.5rem rgba(1, 14, 1,1);
+        }
+
+        #red{background-color:rgb(238, 93, 93)}
+        #yellow{background-color:rgb(248, 248, 118)}
+        #blue{background-color:rgb(29, 167, 202)}
+        #white{background-color:white}
+        #green{background-color:rgb(76, 199, 76)}
+
+        .result{
+            position:absolute;
+            text-align: center;
+            left:50%;
+            margin:0;
+            outline: 0;
+            padding: 0;
+            margin-top: 40px;;
+            transform: translateX(-50%);
+            color: rgb(209, 140, 35);
+            font-size: 2.5rem;
+            text-shadow:0rem 0rem 1rem rgba(240, 0, 0, 0.8);
+            width:100%;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .wrong{
+            color:rgb(202, 71, 53);
+            text-shadow:0rem 0rem 1rem rgba(75, 3, 3, 0.8);
+            visibility: hidden;
+        }
+
+        .correct{
+            color:rgb(53, 179, 3);
+            text-shadow:0rem 0rem 1rem rgba(1, 14, 1, 0.8);
+            visibility: hidden;
+        }
+
+        h1{
+            position:absolute;
+            text-align: center;
+            left:50%;
+            margin:0;
+            outline: 0;
+            padding: 0;
+            margin-top: 1.5px;;
+  
+            color: rgb(37, 25, 5);
+            font-size: 1rem;
+            text-shadow:0rem 0rem 1rem rgba(90, 90, 90, 0.8);
+            width:100%;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            animation: bounce 1s infinite ease-in-out;
+        }
+
+        @keyframes bounce{
+            0%{transform:translateX(-50%) scale(1)}
+            50%{transform: translateX(-50%) scale(1.2)}
+            100%{transform:translateX(-50%) scale(1)}
+        }
+
+        
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <h1>SELECT CORRECT COLOR OF HAT</h1>
+        <h2 class="result wrong">Wrong!!! Try Again</h2>
+        <h2 class="result correct">Correct. You Won</h2>
+
+        <div class="img-container">
+            <img src="images//adb.png" id="adb-img">
+            <img src="images//chain.png" id="chain">
+            <img src="images//cigar.png" id="cigar">
+            
+        </div>
+
+        <div class="hat-container">
+            <img src="images/hat.png"id="hat-img">
+        </div>
+
+        <h2 class="caption">White Hat jr. Boy &#128293;</h2>
+
+        <div class="buttons">
+            <button class="btn red" id="red">Red</button>
+            <button class="btn blue" id="blue">Blue</button>
+            <button class="btn yellow" id="yellow">Yellow</button>
+            <button class="btn white" id="white">White</button>
+            <button class="btn green" id="green">Green</button>
+        </div>
+
+
+
+    </div>
+
+    <script>
+
+        const btns = document.querySelectorAll(".btn");
+        const wrongAns = document.querySelector(".wrong");
+        const correctAns = document.querySelector(".correct");
+        console.log(btns)
+
+        btns.forEach(function(btn){
+            btn.addEventListener('click', function(e){
+                const clickedButton = e.currentTarget.classList;
+                wrongAns.style.visibility="hidden";
+                correctAns.style.visibility="hidden";
+                if (clickedButton.contains('white')){
+                    document.querySelector(".hat-container").style.top="30%";
+                    document.querySelector("#chain").style.visibility="visible";
+                    document.querySelector("#cigar").style.visibility="visible";
+                    document.querySelector(".correct").style.visibility="visible";
+                    document.querySelector(".correct").style.visibility="visible";
+                    document.querySelector(".caption").style.visibility="visible";
+                    document.querySelector("h1").style.visibility="hidden";
+                    btns.forEach(function(btn){
+                        btn.style.display="none";
+                    })
+
+
+                }else{
+                    wrongAns.style.vissiblity="visible";
+                    document.querySelector(".wrong").style.visibility="visible";
+                }   
+            })
+        })
+    </script>
+    
+</body>
+</html>
